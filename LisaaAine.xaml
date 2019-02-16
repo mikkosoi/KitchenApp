@@ -1,0 +1,59 @@
+﻿<Window x:Class="KitchenApp.LisaaAine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KitchenApp"
+        mc:Ignorable="d"
+        Title="Lisää Aine" Height="380" Width="300" ResizeMode="CanMinimize" Icon="/Kuvat/pannu.png">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=txtNimi}">
+        <Grid.Background>
+            <ImageBrush ImageSource="Kuvat/Keittio-taustakuva.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+        </Grid.Background>
+        <Label x:Name="lblMittayksikko" Content="Mittayksikkö:" Margin="26,160,22,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="22" FontWeight="Bold" Height="39"/>
+        <Label x:Name="lblMaara" Content="Määrä:" Margin="24,110,24,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="22" FontWeight="Bold" Height="38"/>
+        <Label x:Name="lblNimi" Content="Nimi:" Margin="24,60,24,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="22" FontWeight="Bold" Height="39"/>
+        <Label x:Name="lblParastaEnnen" Content="Parasta Ennen:" Margin="24,210,24,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="20" FontWeight="Bold" Height="39" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnLisaa" Content="Lisää"  Cursor="Hand" FontWeight="Bold" Click="btnLisaa_Click" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="96" Margin="0,0,172,13">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnPeruuta" Content="Peruuta" Cursor="Hand" FontWeight="Bold" HorizontalAlignment="Left" Margin="172,0,0,13" Width="96" Click="btnPeruuta_Click" RenderTransformOrigin="0.547,6.25" Height="30" VerticalAlignment="Bottom">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DatePicker x:Name="dpParastaEnnen" HorizontalAlignment="Left" Margin="168,218,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday"  Width="93">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFE2FAFF"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+        <ComboBox x:Name="cmbMittayksikko" Margin="179,168,30,0" VerticalAlignment="Top" BorderBrush="White">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <TextBox x:Name="txtNimi" Height="23" Margin="140,68,32,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MaxLength="30"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="24,60,24,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMaara" Height="22" Margin="140,118,32,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" MaxLength="4" TextChanged="txtMaara_TextChanged" KeyDown="txtMaara_KeyDown"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="26,160,22,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="38" Margin="24,110,24,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="24,210,24,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbLisaaAine" Content="Lisää uusi aine" HorizontalAlignment="Center" FontFamily="Bradley Hand ITC" FontSize="34" FontWeight="Bold" Margin="26,5,24,296" Width="244" RenderTransformOrigin="0.596,0.471" HorizontalContentAlignment="Center" />
+    </Grid>
+</Window>

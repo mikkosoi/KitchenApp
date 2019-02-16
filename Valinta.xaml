@@ -1,0 +1,42 @@
+﻿<Window x:Class="KitchenApp.Valinta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KitchenApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Valinta" Height="180" Width="350" Icon="/Kuvat/pannu.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Kuvat/Keittio-taustakuva.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+        </Grid.Background>
+        <Label x:Name="lblKysymys" Content="Poistetaanko kaikki vai valittu aine?" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="18" FontWeight="Bold" Margin="10,28,10,79" RenderTransformOrigin="0.954,-0.174"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Margin="10,28,10,79"></Border>
+        <Button x:Name="btnKaikki" Content="Kaikki" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="96" Height="30" Click="btnKaikki_Click" FontWeight="Bold" Cursor="Hand">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnYksi" Content="Valittu aine" HorizontalAlignment="Left" Margin="123,100,0,0" VerticalAlignment="Top" Width="96" Height="30" FontWeight="Bold" Cursor="Hand" Click="btnYksi_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnPeruuta" Content="Peruuta" Margin="236,100,10,0" VerticalAlignment="Top" Height="30" FontWeight="Bold" Cursor="Hand" Click="btnPeruuta_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

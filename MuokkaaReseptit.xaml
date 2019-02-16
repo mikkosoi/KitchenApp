@@ -1,0 +1,54 @@
+﻿<Window x:Class="KitchenApp.MuokkaaReseptit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KitchenApp"
+        mc:Ignorable="d"
+        Title="Muokkaa reseptiä" Height="600" Width="350" ResizeMode="CanMinimize" Icon="/Kuvat/pannu.png">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=txtNimi}">
+        <Grid.Background>
+            <ImageBrush ImageSource="Kuvat/Keittio-taustakuva.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+        </Grid.Background>
+        <Label x:Name="lblNimi" Content="Resepti:" Margin="10,51,10,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="22" FontWeight="Bold" Height="39"/>
+
+        <Button x:Name="btnPeruuta" Content="Sulje" Cursor="Hand" FontWeight="Bold" Margin="0,0,10,13" Click="btnPeruuta_Click" RenderTransformOrigin="0.547,6.25" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEAEAEA" Offset="0.743"/>
+                    <GradientStop Color="White" Offset="0.417"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="10,51,10,0" VerticalAlignment="Top">
+            <ComboBox x:Name="cmbReseptit" Margin="115,7,10,7" SelectionChanged="cmbReseptit_SelectionChanged"/>
+        </Border>
+        <DataGrid x:Name="dgReseptiaineet" Height="188" Margin="10,90,10,0" VerticalAlignment="Top" ItemsSource="{Binding Items}" AutoGenerateColumns="False" ColumnWidth="*" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserAddRows="False" HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nimi" Binding="{Binding Nimi}" FontWeight="Bold" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Määrä" Binding="{Binding Maara}" Width="60"/>
+                <DataGridTextColumn Header="Yksikkö" Binding="{Binding Mittayksikko}" Width="50" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.Background>
+                <ImageBrush ImageSource="/Kuvat/Keittio-taustakuva.jpg" Opacity="0.0"/>
+            </DataGrid.Background>
+        </DataGrid>
+        <TextBox x:Name="txtOhje" Height="164" Margin="10,328,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="10,289,10,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblohje" Content="Ohje:" Margin="10,289,10,0" VerticalAlignment="Top" Background="#FFE2FAFF" FontFamily="Bradley Hand ITC" FontSize="22" FontWeight="Bold" Height="39"/>
+        <Border BorderBrush="#FF1463B2" BorderThickness="1" Height="39" Margin="10,289,10,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnPoista" Width="30" Height="30" RenderTransformOrigin="2.324,0.706" ToolTip="Poista resepti" Cursor="Hand" Margin="51,0,0,13" Click="btnPoista_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button.Content>
+                <Image Source="/Kuvat/poista.png"></Image>
+            </Button.Content>
+        </Button>
+        <Button x:Name="btnTallenna" Width="30" Height="30" RenderTransformOrigin="2.324,0.706" ToolTip="Tallenna" Cursor="Hand" Margin="10,0,0,13" Click="btnTallenna_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button.Content>
+                <Image Source="/Kuvat/tallenna.png"></Image>
+            </Button.Content>
+        </Button>
+        <Label Content="Muokkaa reseptiä" Margin="50,4,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Bradley Hand ITC" FontWeight="Bold" HorizontalAlignment="Left" Width="244"/>
+    </Grid>
+</Window>
