@@ -10,4 +10,4 @@ KitchenApp was a school project for starting software programming students in Jy
 
 ## IMPORTANT NOTE  
 
-KitchenApp database is currently inaccecible outside of JAMK (Jyväskylä University of Applied Sciences) LabraNet network, database backup files have beem added so that alternative SQL server can be used, modifications need to be added in "App.config" file.
+KitchenApp database is currently inaccecible outside of JAMK (Jyväskylä University of Applied Sciences) LabraNet network, database backup files have been added so that alternative SQL server can be used, modifications need to be added in "App.config" file.
